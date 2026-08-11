@@ -4,18 +4,25 @@
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-    if (s.length !== t.length) return false;
+    
+    if(s.length !== t.length) return false
 
-    const freq = {};
+    const frqS={}
+    const frqT={}
 
-    for (let char of s) {
-        freq[char] = (freq[char] || 0) + 1;
+    for(let chars of s){
+        frqS[chars]=(frqS[chars] || 0)+1;
+    }
+    for(let chars of t){
+        frqT[chars]=(frqT[chars] || 0)+1;
     }
 
-    for (let char of t) {
-        if (!freq[char]) return false;
-        freq[char]--;
+    for(let char in frqS){
+        if(frqS[char]!== frqT[char]){
+            return false
+        }
     }
 
-    return true;
+
+return true
 };
