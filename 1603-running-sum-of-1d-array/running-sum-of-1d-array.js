@@ -4,12 +4,11 @@
  */
 var runningSum = function(nums) {
 
-    let sum=0
+    let sum=0;
 
     for(i=0;i<nums.length;i++){
      sum+=nums[i]
      nums[i]=sum
-     console.log(nums[i])
     }
     return nums
 };
